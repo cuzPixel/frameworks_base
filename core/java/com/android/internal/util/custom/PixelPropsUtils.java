@@ -60,9 +60,9 @@ public class PixelPropsUtils {
         propsToChange = new HashMap<>();
         propsToChange.put("BRAND", "google");
         propsToChange.put("MANUFACTURER", "Google");
-        propsToChange.put("DEVICE", "redfin");
-        propsToChange.put("PRODUCT", "redfin");
-        propsToChange.put("MODEL", "Pixel 5");
+        propsToChange.put("DEVICE", "sunfish");
+        propsToChange.put("PRODUCT", "sunfish");
+        propsToChange.put("MODEL", "Pixel 4a");
     }
 
     public static void setProps(String packageName) {
