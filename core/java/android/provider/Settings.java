@@ -4929,6 +4929,24 @@ public final class Settings {
         public static final String CHARGING_ANIMATION = "charging_animation";
 
         /**
+         * Whether to show network traffic indicator
+         * @hide
+         */
+        public static final String NETWORK_TRAFFIC_LOCATION = "network_traffic_location";
+
+        /**
+         * Whether or not to hide the network traffic indicator when there is no activity
+         * @hide
+         */
+        public static final String NETWORK_TRAFFIC_AUTOHIDE = "network_traffic_autohide";
+
+        /**
+         * Measurement unit preference for network traffic
+         * @hide
+         */
+        public static final String NETWORK_TRAFFIC_UNIT_TYPE = "network_traffic_unit_type";
+
+        /**
          * IMPORTANT: If you add a new public settings you also have to add it to
          * PUBLIC_SETTINGS below. If the new setting is hidden you have to add
          * it to PRIVATE_SETTINGS below. Also add a validator that can validate
@@ -5073,6 +5091,9 @@ public final class Settings {
             PRIVATE_SETTINGS.add(VIBRATE_ON_CONNECT);
             PRIVATE_SETTINGS.add(VIBRATE_ON_CALLWAITING);
             PRIVATE_SETTINGS.add(VIBRATE_ON_DISCONNECT);
+            PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_LOCATION);
+            PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_AUTOHIDE);
+            PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_UNIT_TYPE);
         }
 
         /**
