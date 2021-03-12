@@ -222,23 +222,20 @@ public class NetworkTraffic extends TextView {
         }
 
         private String formatOutput(long size) {
-            String[] units = new String[]{"", "kB/s", "MB/s", "GB/s", "TB/s", "PB/s"};
+            String[] units = new String[]{"B", "KB", "MB", "GB"};
             int mod = 1024;
             if (mUnitType == UNIT_TYPE_BITS){
-                units = new String[]{"", "kbps", "Mbps", "Gbps", "Tbps", "Pbps"};
+                units = new String[]{"b", "Kb", "Mb", "Gb"};
                 mod = 1000;
                 size = size * 8;
             }
-            double power = (size > 0) ? Math.floor(Math.log(size) / Math.log(mod)) : 0;
+            double power = (size >= mod) ? Math.floor(Math.log(size) / Math.log(mod)) : 0;
             String unit = units[(int) power];
-            String separator = getMyMode() == MODE_STATUS_BAR ? "\n" : " ";
             if (size <= 0) {
-                return String.format("%d%s%s", 0, separator, units[1]);
-            }else if (unit.equals("")) {
-                return String.format("< %d%s%s", 0, separator, units[1]);
+                return String.format("%d%s", 0, units[0]);
             }
             double result = size / Math.pow(mod, power);
-            return String.format("%d%s%s", (int) result, separator, unit);
+            return String.format("%d%s", (int) result, unit);
         }
     };
 
