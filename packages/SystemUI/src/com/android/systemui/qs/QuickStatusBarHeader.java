@@ -204,7 +204,6 @@ public class QuickStatusBarHeader extends RelativeLayout implements
     };
 
     // Network Traffic
-    private NetworkTraffic mNetworkTraffic;
     private NetworkTraffic mNetworkTrafficExpanded;
 
     @Inject
@@ -266,6 +265,7 @@ public class QuickStatusBarHeader extends RelativeLayout implements
 
         // Set light text on the header icons because they will always be on a black background
         applyDarkness(R.id.clock, tintArea, 0, DarkIconDispatcher.DEFAULT_ICON_TINT);
+        applyDarkness(R.id.networkTrafficExpanded, tintArea, 0, DarkIconDispatcher.DEFAULT_ICON_TINT);
 
         // Set the correct tint for the status icons so they contrast
         mIconManager.setTint(fillColor);
@@ -288,7 +288,6 @@ public class QuickStatusBarHeader extends RelativeLayout implements
         mNextAlarmTextView.setSelected(true);
 
         // Network Traffic
-        mNetworkTraffic = findViewById(R.id.networkTraffic);
         mNetworkTrafficExpanded = findViewById(R.id.networkTrafficExpanded);
 
         mAllIndicatorsEnabled = mPrivacyItemController.getAllIndicatorsAvailable();
@@ -715,8 +714,6 @@ public class QuickStatusBarHeader extends RelativeLayout implements
         float intensity = getColorIntensity(colorForeground);
         int fillColor = mDualToneHandler.getSingleColor(intensity);
         mBatteryRemainingIcon.onDarkChanged(tintArea, intensity, fillColor);
-        mNetworkTraffic.onDarkChanged(tintArea, intensity, fillColor);
-        mNetworkTrafficExpanded.onDarkChanged(tintArea, intensity, fillColor);
     }
 
     public void setCallback(Callback qsPanelCallback) {
