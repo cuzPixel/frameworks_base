@@ -222,20 +222,36 @@ public class NetworkTraffic extends TextView {
         }
 
         private String formatOutput(long size) {
-            String[] units = new String[]{"B", "KB", "MB", "GB"};
+            String[] units = new String[]{"", "KB", "MB", "GB"};
             int mod = 1024;
             if (mUnitType == UNIT_TYPE_BITS){
-                units = new String[]{"b", "Kb", "Mb", "Gb"};
+                units = new String[]{"", "Kb", "Mb", "Gb"};
                 mod = 1000;
                 size = size * 8;
             }
             double power = (size >= mod) ? Math.floor(Math.log(size) / Math.log(mod)) : 0;
             String unit = units[(int) power];
-            if (size <= 0) {
-                return String.format("%d%s", 0, units[0]);
+            if (size <= 0 || unit.equals("")) {
+                return String.format("%d%s", 0, units[1]);
             }
-            double result = size / Math.pow(mod, power);
-            return String.format("%d%s", (int) result, unit);
+            DecimalFormat decimalFormat;
+            if (size >= mod * mod * mod) {
+                decimalFormat = new DecimalFormat("0.00");
+            } else if (size >= 100 * mod * mod) {
+                decimalFormat = new DecimalFormat("000");
+            } else if (size >= 10 * mod * mod) {
+                decimalFormat = new DecimalFormat("00.0");
+            } else if (size >= mod * mod) {
+                decimalFormat = new DecimalFormat("0.00");
+            } else if (size >= 100 * mod) {
+                decimalFormat = new DecimalFormat("000");
+            } else if (size >= 10 * mod) {
+                decimalFormat = new DecimalFormat("00");
+            } else {
+                decimalFormat = new DecimalFormat("0");
+            }
+            String result = decimalFormat.format(size / Math.pow(mod, power));
+            return String.format("%s%s", result, unit);
         }
     };
 
