@@ -31,29 +31,29 @@ public class PixelPropsUtils {
     private static final Map<String, Object> propsToChange;
 
     private static final String[] packagesToChange = {
-            "com.google.android.ext.services",
-            "com.google.android.apps.pixelmigrate",
+            "com.breel.wallpapers20a",
+            "com.google.android.apps.customization.pixel",
+            "com.google.android.apps.fitness",
+            "com.google.android.apps.maps",
+            "com.google.android.apps.nexuslauncher",
+            "com.google.android.apps.photos",
+            "com.google.android.apps.recorder",
             "com.google.android.apps.safetyhub",
+            "com.google.android.apps.subscriptions.red",
+            "com.google.android.apps.tachyon",
+            "com.google.android.apps.turbo",
+            "com.google.android.apps.turboadapter",
+            "com.google.android.apps.wallpaper",
+            "com.google.android.apps.wallpaper.pixel",
             "com.google.android.as",
             "com.google.android.dialer",
-            "com.google.intelligence.sense",
-            "com.android.vending",
-            "com.google.android.apps.gcs",
-            "com.google.android.apps.turbo",
-            "com.google.android.apps.wellbeing",
-            "com.google.android.configupdater",
             "com.google.android.gms",
+            "com.google.android.gms.location.history",
             "com.google.android.googlequicksearchbox",
-            "com.google.android.settings.intelligence",
-            "com.google.android.setupwizard",
-            "com.google.android.apps.nexuslauncher",
-            "com.google.android.gsf",
-            "com.google.android.apps.wallpaper",
-            "com.google.android.onetimeinitializer",
-            "com.google.android.pixel.setupwizard",
-            "com.google.android.apps.messaging",
-            "com.google.android.apps.photos",
-            "com.google.android.apps.maps"
+            "com.google.android.inputmethod.latin",
+            "com.google.android.soundpicker",
+            "com.google.pixel.dynamicwallpapers",
+            "com.google.pixel.livewallpaper",
     };
 
     static {
@@ -63,6 +63,7 @@ public class PixelPropsUtils {
         propsToChange.put("DEVICE", "sunfish");
         propsToChange.put("PRODUCT", "sunfish");
         propsToChange.put("MODEL", "Pixel 4a");
+        propsToChange.put("FINGERPRINT", "google/sunfish/sunfish:11/RQ2A.210405.005/7181113:user/release-keys");
     }
 
     public static void setProps(String packageName) {
