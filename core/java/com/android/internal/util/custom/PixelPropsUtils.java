@@ -63,7 +63,7 @@ public class PixelPropsUtils {
         propsToChange.put("DEVICE", "sunfish");
         propsToChange.put("PRODUCT", "sunfish");
         propsToChange.put("MODEL", "Pixel 4a");
-        propsToChange.put("FINGERPRINT", "google/sunfish/sunfish:11/RQ2A.210505.002/7246365:user/release-keys");
+        propsToChange.put("FINGERPRINT", "google/sunfish/sunfish:11/RQ3A.210605.005/7349499:user/release-keys");
     }
 
     public static void setProps(String packageName) {
